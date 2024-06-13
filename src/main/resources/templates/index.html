@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #sidebar {
+            width: 200px;
+            height: 100vh;
+            background-color: #f8f8f8;
+            padding: 15px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        }
+
+        #content {
+            margin-left: 220px;
+            padding: 20px;
+        }
+
+        #header {
+            background-color: #f1f1f1;
+            padding: 10px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        #menu {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+            background-color: #f1f1f1;
+        }
+
+        #menu div {
+            cursor: pointer;
+            padding: 10px 20px;
+        }
+
+        #menu div:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+<div id="header">
+    Dashboard
+</div>
+<div id="menu">
+    <div>Account Statement</div>
+    <div>Funds Transfer</div>
+    <a href="http://localhost:8080/api/users/user-details">
+        <div>User Profile</div>
+    </a>
+    <div>Change UserID Password</div>
+</div>
+<div id="sidebar">
+
+    <div>Account Details</div>
+    <a th:href="@{'http://localhost:8080/account-summary/' + ${1}}">Account Summary</a>
+    <div>Funds Transfer</div>
+    <div>Account Statement</div>
+</div>
+<div id="content">
+    <!-- Content will go here -->
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
